@@ -1,7 +1,11 @@
-import '../styles/globals.css'
+import Strucutre from '../componets/Strucutre';
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (
+    <Strucutre>
+      <Component {...pageProps} />
+    </Strucutre>
+  );
 }
 
-export default MyApp
+export default MyApp;
