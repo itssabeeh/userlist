@@ -5,7 +5,7 @@ import { MdModeEdit, MdDelete } from 'react-icons/md';
 import indexStyle from '../styles/index.module.css';
 import AddUser from '../componets/AddUser';
 
-const index = () => {
+const Index = () => {
   const [user, setUser] = useState({
     key: '',
     name: '',
@@ -114,4 +114,4 @@ const index = () => {
     </div>
   );
 };
-export default index;
+export default Index;
