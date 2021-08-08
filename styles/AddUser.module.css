@@ -1,0 +1,15 @@
+.adduserContainer {
+  display: flex;
+  justify-content: space-between;
+  background: white;
+  padding: 2rem;
+}
+.addButton {
+  background: black;
+  border: black;
+  padding: 0 4rem;
+}
+.userForm {
+  display: flex;
+  justify-content: center;
+}

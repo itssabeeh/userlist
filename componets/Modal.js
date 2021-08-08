@@ -1,13 +1,26 @@
 import ModalStyle from '../styles/Modal.module.css';
-import { Button } from 'antd';
+import { Form, Input, Button } from 'antd';
 
-const Modal = ({ length }) => {
+const Modal = () => {
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    console.log('hello');
+  };
   return (
     <div className={ModalStyle.modalContainer}>
-      <section>{length} users</section>
-      <Button className={ModalStyle.addButton} type="primary">
-        Add User
-      </Button>
+      <Form className={ModalStyle.modalForm}>
+        <Form.Item name="username">
+          <Input placeholder="User name"></Input>
+        </Form.Item>
+        <Form.Item name="email">
+          <Input placeholder="Email"></Input>
+        </Form.Item>
+        <Form.Item>
+          <Button type="primary" htmlType="submit">
+            Add User
+          </Button>
+        </Form.Item>
+      </Form>
     </div>
   );
 };
