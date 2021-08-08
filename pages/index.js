@@ -48,10 +48,10 @@ const index = () => {
     setUser({ ...user, name: '', email: '' });
   };
   const data = [
-    { key: uuidv4(), name: 'sabeeh', email: 'sabee@gmail.com' },
-    { key: uuidv4(), name: 'noah', email: 'noah@gmail.com' },
-    { key: uuidv4(), name: 'rabi', email: 'rabi@gmail.com' },
-    { key: uuidv4(), name: 'kiran', email: 'kiran@gmail.com' },
+    { key: uuidv4(), name: 'Skyller', email: 'skyller@gmail.com' },
+    { key: uuidv4(), name: 'Tom', email: 'tom@gmail.com' },
+    { key: uuidv4(), name: 'Elliot', email: 'elliot@gmail.com' },
+    { key: uuidv4(), name: 'Jessy', email: 'jessy@gmail.com' },
   ];
   const columns = [
     {
