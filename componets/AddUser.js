@@ -18,6 +18,7 @@ const AddUser = ({
         {isModalOpen && (
           <form onSubmit={handleSubmit}>
             <input
+              className={AddUserStyle.inputStyle}
               required
               type="text"
               placeholder="User name"
@@ -26,6 +27,7 @@ const AddUser = ({
               onChange={handleChange}
             ></input>
             <input
+              className={AddUserStyle.inputStyle}
               required
               type="email"
               placeholder="email"
@@ -33,7 +35,11 @@ const AddUser = ({
               value={user.email}
               onChange={handleChange}
             ></input>
-            <Button type="primary" htmlType="submit">
+            <Button
+              type="primary"
+              htmlType="submit"
+              className={AddUserStyle.innerButton}
+            >
               {isEdit ? 'Edit' : 'Add User'}
             </Button>
           </form>

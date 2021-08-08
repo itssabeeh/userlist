@@ -4,6 +4,7 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background: white;
 }
 
 a {
@@ -13,4 +14,24 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+/* antd styling */
+.ant-btn-primary {
+  background: black;
+  border: black;
+  padding: 0 4rem;
+}
+.ant-btn-primary:focus {
+  background: black;
+  border: black;
+}
+.ant-btn-primary:hover {
+  background: rgb(105, 104, 104);
+}
+.ant-table-thead > tr > th {
+  background: rgb(216, 210, 210);
+}
+.ant-table-pagination {
+  display: none;
 }

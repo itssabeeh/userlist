@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
-import { Table, Row, Col } from 'antd';
+import { Table } from 'antd';
 import { MdModeEdit, MdDelete } from 'react-icons/md';
+import indexStyle from '../styles/index.module.css';
 import AddUser from '../componets/AddUser';
 const index = () => {
   const [user, setUser] = useState({
@@ -90,7 +91,7 @@ const index = () => {
     setUsers(data);
   }, []);
   return (
-    <div>
+    <div className={indexStyle.content}>
       <AddUser
         length={users.length}
         handleSubmit={handleSubmit}
@@ -100,7 +101,9 @@ const index = () => {
         isModalOpen={isModalOpen}
         isEdit={isEdit}
       />
-      <Table dataSource={users} columns={columns} />;
+      <div className={indexStyle.tableContainer}>
+        <Table dataSource={users} columns={columns} />
+      </div>
     </div>
   );
 };
