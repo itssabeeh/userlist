@@ -1,41 +1,45 @@
 import { useState } from 'react';
 import AddUserStyle from '../styles/AddUser.module.css';
-import { Form, Input, Button } from 'antd';
+import { Button } from 'antd';
 
-const AddUser = ({ length, handleAdd }) => {
-  const [isModalOpen, setIsModalOpan] = useState(false);
-  const addUser = () => {
-    setIsModalOpan(!isModalOpen);
-  };
-  const onFinish = (e) => {
-    const newUser = {
-      key: new Date().getTime().toString(),
-      name: e.username,
-      email: e.email,
-    };
-    handleAdd(newUser);
-  };
+const AddUser = ({
+  length,
+  user,
+  handleChange,
+  handleSubmit,
+  isModalOpen,
+  handleModal,
+  isEdit,
+}) => {
   return (
     <>
       <div className={AddUserStyle.adduserContainer}>
         <section>{length} users</section>
         {isModalOpen && (
-          <Form className={AddUserStyle.userForm} onFinish={onFinish}>
-            <Form.Item name="username">
-              <Input placeholder="}User name"></Input>
-            </Form.Item>
-            <Form.Item name="email">
-              <Input placeholder="Email"></Input>
-            </Form.Item>
-            <Form.Item>
-              <Button type="primary" htmlType="submit">
-                Add User
-              </Button>
-            </Form.Item>
-          </Form>
+          <form onSubmit={handleSubmit}>
+            <input
+              required
+              type="text"
+              placeholder="User name"
+              name="name"
+              value={user.name}
+              onChange={handleChange}
+            ></input>
+            <input
+              required
+              type="email"
+              placeholder="email"
+              name="email"
+              value={user.email}
+              onChange={handleChange}
+            ></input>
+            <Button type="primary" htmlType="submit">
+              {isEdit ? 'Edit' : 'Add User'}
+            </Button>
+          </form>
         )}
         <Button
-          onClick={addUser}
+          onClick={handleModal}
           className={AddUserStyle.addButton}
           type="primary"
         >
