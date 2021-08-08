@@ -70,6 +70,7 @@ const Index = () => {
       title: 'Edit',
       key: 'edit',
       align: 'center',
+      // eslint-disable-next-line react/display-name
       render: (record) => (
         <a
           onClick={() => {
@@ -87,6 +88,7 @@ const Index = () => {
       title: 'Delete',
       key: 'delete',
       align: 'center',
+      // eslint-disable-next-line react/display-name
       render: (record) => (
         <a onClick={() => handleDelete(record)}>
           <MdDelete />
