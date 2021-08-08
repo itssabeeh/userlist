@@ -1,10 +1,13 @@
 import { useEffect, useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import { Table } from 'antd';
 import { MdModeEdit, MdDelete } from 'react-icons/md';
 import indexStyle from '../styles/index.module.css';
 import AddUser from '../componets/AddUser';
+
 const index = () => {
   const [user, setUser] = useState({
+    key: '',
     name: '',
     email: '',
   });
@@ -16,7 +19,7 @@ const index = () => {
     if (isEdit && isModalOpen) {
       setEditId(null);
       setIsEdit(false);
-      setUser({ ...user, name: '', email: '' });
+      setUser({ ...user, key: uuidv4(), name: '', email: '' });
     }
     setIsModalOpan(!isModalOpen);
   };
@@ -45,25 +48,28 @@ const index = () => {
     setUser({ ...user, name: '', email: '' });
   };
   const data = [
-    { key: '1', name: 'sabeeh', email: 'itssabeeh@gmail.com' },
-    { key: '2', name: 'noah', email: 'noah@gmail.com' },
-    { key: '3', name: 'rabi', email: 'rabi@gmail.com' },
-    { key: '4', name: 'kiran', email: 'kiran@gmail.com' },
+    { key: uuidv4(), name: 'sabeeh', email: 'sabee@gmail.com' },
+    { key: uuidv4(), name: 'noah', email: 'noah@gmail.com' },
+    { key: uuidv4(), name: 'rabi', email: 'rabi@gmail.com' },
+    { key: uuidv4(), name: 'kiran', email: 'kiran@gmail.com' },
   ];
   const columns = [
     {
       title: 'Name',
       dataIndex: 'name',
       key: 'name',
+      width: '35%',
     },
     {
       title: 'Email',
       dataIndex: 'email',
       key: 'email',
+      width: '40%',
     },
     {
       title: 'Edit',
       key: 'edit',
+      align: 'center',
       render: (record) => (
         <a
           onClick={() => {
@@ -80,6 +86,7 @@ const index = () => {
     {
       title: 'Delete',
       key: 'delete',
+      align: 'center',
       render: (record) => (
         <a onClick={() => handleDelete(record)}>
           <MdDelete />

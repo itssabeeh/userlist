@@ -14,7 +14,7 @@ const AddUser = ({
   return (
     <>
       <div className={AddUserStyle.adduserContainer}>
-        <section>{length} users</section>
+        <section>{length} Users</section>
         {isModalOpen && (
           <form onSubmit={handleSubmit}>
             <input
