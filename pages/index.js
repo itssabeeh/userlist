@@ -19,7 +19,11 @@ const Index = () => {
     if (isEdit && isModalOpen) {
       setEditId(null);
       setIsEdit(false);
-      setUser({ ...user, key: uuidv4(), name: '', email: '' });
+      setUser({
+        key: '',
+        name: '',
+        email: '',
+      });
     }
     setIsModalOpan(!isModalOpen);
   };
@@ -43,15 +47,16 @@ const Index = () => {
       );
       handleModal();
     } else {
-      setUsers([...users, user]);
+      const newUser = { key: uuidv4(), name: user.name, email: user.email };
+      setUsers([...users, newUser]);
     }
-    setUser({ ...user, name: '', email: '' });
+    setUser({ name: '', email: '' });
   };
   const data = [
-    { key: uuidv4(), name: 'Skyller', email: 'skyller@gmail.com' },
-    { key: uuidv4(), name: 'Tom', email: 'tom@gmail.com' },
-    { key: uuidv4(), name: 'Elliot', email: 'elliot@gmail.com' },
-    { key: uuidv4(), name: 'Jessy', email: 'jessy@gmail.com' },
+    { key: 1, name: 'Skyller', email: 'skyller@gmail.com' },
+    { key: 2, name: 'Tom', email: 'tom@gmail.com' },
+    { key: 3, name: 'Elliot', email: 'elliot@gmail.com' },
+    { key: 4, name: 'Jessy', email: 'jessy@gmail.com' },
   ];
   const columns = [
     {
