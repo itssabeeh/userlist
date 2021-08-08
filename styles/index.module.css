@@ -2,3 +2,13 @@
   width: 95vw;
   margin: 0 auto;
 }
+.deleteAllBtn {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+@media only screen and (max-width: 450px) {
+  .deleteAllBtn {
+    justify-content: center;
+  }
+}

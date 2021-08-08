@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import { Table } from 'antd';
+import { Table, Button } from 'antd';
 import { MdModeEdit, MdDelete } from 'react-icons/md';
 import indexStyle from '../styles/index.module.css';
 import AddUser from '../componets/AddUser';
@@ -117,6 +117,11 @@ const Index = () => {
       />
       <div className={indexStyle.tableContainer}>
         <Table dataSource={users} columns={columns} />
+        <div className={indexStyle.deleteAllBtn}>
+          <Button onClick={() => setUsers([])} type="primary">
+            Delete All
+          </Button>
+        </div>
       </div>
     </div>
   );
